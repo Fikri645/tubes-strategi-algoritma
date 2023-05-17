@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shortest Path Algorithms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #graph-input {
+      width: 100%;
+      height: 200px;
+    }
+
+    #output {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shortest Path Algorithms</h1>
+  
+  <h2>Bellman-Ford</h2>
+  <div>
+    <label for="source-node-bf">Source Node:</label>
+    <input type="text" id="source-node-bf" placeholder="Enter source node">
+    <br>
+    <label for="graph-input-bf">Graph (JSON):</label>
+    <br>
+    <textarea id="graph-input-bf" placeholder="Enter graph in JSON format"></textarea>
+    <br>
+    <button onclick="runBellmanFord()">Run Bellman-Ford</button>
+  </div>
+  <div id="output-bf"></div>
+
+  <h2>Dijkstra</h2>
+  <div>
+    <label for="source-node-dijkstra">Source Node:</label>
+    <input type="text" id="source-node-dijkstra" placeholder="Enter source node">
+    <br>
+    <label for="graph-input-dijkstra">Graph (JSON):</label>
+    <br>
+    <textarea id="graph-input-dijkstra" placeholder="Enter graph in JSON format"></textarea>
+    <br>
+    <button onclick="runDijkstra()">Run Dijkstra</button>
+  </div>
+  <div id="output-dijkstra"></div>
+
+  <script src="assets/algoritma.js"></script>
+</body>
+</html>
