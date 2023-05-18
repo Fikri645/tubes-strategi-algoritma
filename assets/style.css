@@ -74,3 +74,35 @@ button:hover {
   padding: 10px;
   white-space: pre-wrap;
 }
+
+#halaman-utama{
+  background-image: url("/assets/images/pembuka.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#pembuka{
+  text-align: center;
+}
+#pembuka p{
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+.overlay{
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  text-align: center;
+}
+
+#bellman-ford{
+  background-color: whitesmoke;
+  color: black;
+}
+
+#dijkstra{
+  background-color: black;
+}

@@ -9,17 +9,37 @@
     <script defer src="assets/index.js"></script>
   </head>
   <body>
-    <section class="hidden">
-      <h1>Shortest Path Algorithms</h1>
-      <h2>Kelompok: </h2>
-      <div>
-        <p class="nama hidden hidden-kiri" style="--order: 1;">1. Muhammad Fikri Wahidin (1301213505)</p>
-        <p class="nama hidden hidden-kiri" style="--order: 2;">2. Mursyid Najib Muhana (1301210411)</p>
-        <p class="nama hidden hidden-kiri" style="--order: 3;">3. Rashad Izza Andredi (1301213309)</p>
+    <section class="hidden" id="halaman-utama">
+      <div class="overlay">
+        <h1>Shortest Path Algorithms</h1>
+        <h2>Kelompok:</h2>
+        <div>
+          <p class="nama hidden hidden-kiri" style="--order: 1">
+            1. Muhammad Fikri Wahidin (1301213505)
+          </p>
+          <p class="nama hidden hidden-kiri" style="--order: 2">
+            2. Mursyid Najib Muhana (1301210411)
+          </p>
+          <p class="nama hidden hidden-kiri" style="--order: 3">
+            3. Rashad Izza Andredi (1301213309)
+          </p>
+        </div>
       </div>
     </section>
+    <section id="pembuka">
+      <p>
+        Carl Johnson (CJ), karakter fiksi yang ditugaskan untuk
+        mengantarkan obat-obatan untuk menyelamatkan nyawa orang dalam waktu
+        terbatas. CJ harus mencari solusi rute tercepat dan paling efisien.
+        Dalam usahanya, CJ menggunakan algoritma Bellman-Ford dan Dijkstra yang
+        terkenal dalam menemukan jalur optimal dalam teori graf. Dengan
+        algoritma-algoritma ini sebagai panduannya, CJ memulai perjalanan
+        berisiko, berpacu melawan waktu untuk menyelamatkan setiap detik dan
+        nyawa yang berharga.
+      </p>
+    </section>
 
-    <section class="hidden">
+    <section class="hidden" id="bellman-ford">
       <h2>Bellman-Ford</h2>
       <div>
         <label for="source-node-bf">Source Node:</label>
@@ -41,7 +61,7 @@
       <div id="output-bf"></div>
     </section>
 
-    <section class="hidden">
+    <section class="hidden" id="dijkstra">
       <h2>Dijkstra</h2>
       <div>
         <label for="source-node-dijkstra">Source Node:</label>
