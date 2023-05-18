@@ -24,7 +24,6 @@ class PriorityQueue {
   }
 }
 
-
 function bellmanFord(graph, source) {
   // Inisialisasi jarak awal
   let distance = {};
@@ -62,7 +61,6 @@ function bellmanFord(graph, source) {
 
   return { distance, predecessor };
 }
-
 
 function dijkstra(graph, source) {
   // Inisialisasi jarak awal
@@ -165,6 +163,7 @@ function runDijkstra() {
 
     outputElement.innerHTML = outputHTML;
   } catch (error) {
-    document.getElementById("output-dijkstra").innerHTML = "Error: " + error.message;
+    document.getElementById("output-dijkstra").innerHTML =
+      "Error: " + error.message;
   }
 }
