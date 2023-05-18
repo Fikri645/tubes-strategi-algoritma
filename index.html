@@ -14,20 +14,20 @@
         <h1>Shortest Path Algorithms</h1>
         <h2>Kelompok:</h2>
         <div>
-          <p class="nama hidden hidden-kiri" style="--order: 1">
+          <p class="animasi-tulisan hidden hidden-kiri" style="--order: 1">
             1. Muhammad Fikri Wahidin (1301213505)
           </p>
-          <p class="nama hidden hidden-kiri" style="--order: 2">
+          <p class="animasi-tulisan hidden hidden-kiri" style="--order: 2">
             2. Mursyid Najib Muhana (1301210411)
           </p>
-          <p class="nama hidden hidden-kiri" style="--order: 3">
+          <p class="animasi-tulisan hidden hidden-kiri" style="--order: 3">
             3. Rashad Izza Andredi (1301213309)
           </p>
         </div>
       </div>
     </section>
     <section id="pembuka">
-      <p>
+      <p class="animasi-tulisan hidden hidden-kiri">
         Carl Johnson (CJ), karakter fiksi yang ditugaskan untuk
         mengantarkan obat-obatan untuk menyelamatkan nyawa orang dalam waktu
         terbatas. CJ harus mencari solusi rute tercepat dan paling efisien.
@@ -38,6 +38,17 @@
         nyawa yang berharga.
       </p>
     </section>
+    <section id="peta">
+      <div id="konten-peta">
+        <div class="left-section">
+          <img src="/assets/images/peta.png" alt="peta">
+        </div>
+        <div class="right-section">
+          <h1>Peta</h1>
+          <p>Berikut adalah peta san viero tempat CJ melakukan tugasnya.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="hidden" id="bellman-ford">
       <h2>Bellman-Ford</h2>
@@ -46,14 +57,14 @@
         <input
           type="text"
           id="source-node-bf"
-          placeholder="Enter source node"
+          placeholder="Masukkan titik awal"
         />
         <br />
         <label for="graph-input-bf">Graph (JSON):</label>
         <br />
         <textarea
           id="graph-input-bf"
-          placeholder="Enter graph in JSON format"
+          placeholder="Masukkan graf dalam format JSON"
         ></textarea>
         <br />
         <button onclick="runBellmanFord()">Run Bellman-Ford</button>
@@ -68,14 +79,14 @@
         <input
           type="text"
           id="source-node-dijkstra"
-          placeholder="Enter source node"
+          placeholder="Masukkan titik awal"
         />
         <br />
         <label for="graph-input-dijkstra">Graph (JSON):</label>
         <br />
         <textarea
           id="graph-input-dijkstra"
-          placeholder="Enter graph in JSON format"
+          placeholder="Masukkan graf dalam format JSON"
         ></textarea>
         <br />
         <button onclick="runDijkstra()">Run Dijkstra</button>

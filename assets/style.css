@@ -9,8 +9,6 @@ body {
 
 section {
   display: grid;
-  place-items: center;
-  align-content: center;
   min-height: 100vh;
 }
 
@@ -36,7 +34,7 @@ section {
   transform: translateX(0);
 }
 
-.nama{
+.animasi-tulisan{
   transition-delay: calc(100ms * var(--order));
 }
 
@@ -76,6 +74,8 @@ button:hover {
 }
 
 #halaman-utama{
+  place-items: center;
+  align-content: center;
   background-image: url("/assets/images/pembuka.jpg");
   background-size: cover;
   background-position: center;
@@ -84,6 +84,8 @@ button:hover {
 }
 
 #pembuka{
+  place-items: center;
+  align-content: center;
   text-align: center;
 }
 #pembuka p{
@@ -94,15 +96,52 @@ button:hover {
 .overlay{
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
+  width: 100%;
   text-align: center;
 }
 
-#bellman-ford{
+#peta{
   background-color: whitesmoke;
   color: black;
 }
 
-#dijkstra{
+#konten-peta{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#peta h1{
+  font-size: 3rem;
+  
+}
+
+.left-section {
+  float: left;
+  width: 50%;
+}
+
+.right-section {
+  float: right;
+  width: 50%;
+}
+
+#peta img{
+  width: 40rem;
+  margin-left: 4rem;
+}
+
+#bellman-ford{
+  place-items: center;
+  align-content: center;
   background-color: black;
+}
+
+#dijkstra{
+  place-items: center;
+  align-content: center;
+  background-color: whitesmoke;
+  color: black;
 }
