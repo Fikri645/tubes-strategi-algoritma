@@ -5,15 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #131316;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
-}
-
-section {
-  display: grid;
-  min-height: 100vh;
 }
 
 .belum-muncul {
@@ -42,110 +33,18 @@ section {
   transition-delay: calc(100ms * var(--order));
 }
 
-
-label {
-  display: block;
-  margin-top: 10px;
-}
-
-input[type="text"],
-textarea {
-  width: 30vw;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-#output {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  white-space: pre-wrap;
-}
-
-#halaman-utama{
-  place-items: center;
-  align-content: center;
-  background-image: url("/assets/images/pembuka.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 #pembuka{
-  place-items: center;
-  align-content: center;
-  text-align: center;
-}
-#pembuka p{
-  margin-left: 20rem;
-  margin-right: 20rem;
-}
-
-.overlay-tulisan{
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  min-height: 100vh;
-  text-align: center;
+  background-color: black;
 }
 
 #peta{
   background-color: whitesmoke;
-  color: black;
-}
-
-#konten-peta{
-  margin-top: auto;
-  margin-bottom: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
-
-#peta h1{
-  font-size: 3rem;
-  
-}
-
-.left-section {
-  float: left;
-  width: 50%;
-}
-
-.right-section {
-  float: right;
-  width: 50%;
 }
 
 #peta img{
   width: 40rem;
-  margin-left: 4rem;
 }
 
-#bellman-ford{
-  place-items: center;
-  align-content: center;
+#algoritma{
   background-color: black;
-}
-
-#dijkstra{
-  place-items: center;
-  align-content: center;
-  background-color: whitesmoke;
-  color: black;
 }

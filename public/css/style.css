@@ -522,17 +522,175 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #131316;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
+.absolute {
+  position: absolute;
 }
 
-section {
+.relative {
+  position: relative;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
   display: grid;
-  min-height: 100vh;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
 .belum-muncul {
@@ -561,109 +719,33 @@ section {
   transition-delay: calc(100ms * var(--order));
 }
 
-label {
-  display: block;
-  margin-top: 10px;
-}
-
-input[type="text"],
-textarea {
-  width: 30vw;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-#output {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  white-space: pre-wrap;
-}
-
-#halaman-utama{
-  place-items: center;
-  align-content: center;
-  background-image: url("/assets/images/pembuka.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 #pembuka{
-  place-items: center;
-  align-content: center;
-  text-align: center;
-}
-
-#pembuka p{
-  margin-left: 20rem;
-  margin-right: 20rem;
-}
-
-.overlay-tulisan{
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  min-height: 100vh;
-  text-align: center;
+  background-color: black;
 }
 
 #peta{
   background-color: whitesmoke;
-  color: black;
-}
-
-#konten-peta{
-  margin-top: auto;
-  margin-bottom: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
-
-#peta h1{
-  font-size: 3rem;
-}
-
-.left-section {
-  float: left;
-  width: 50%;
-}
-
-.right-section {
-  float: right;
-  width: 50%;
 }
 
 #peta img{
   width: 40rem;
-  margin-left: 4rem;
 }
 
-#bellman-ford{
-  place-items: center;
-  align-content: center;
+#algoritma{
   background-color: black;
 }
 
-#dijkstra{
-  place-items: center;
-  align-content: center;
-  background-color: whitesmoke;
-  color: black;
+.hover\:bg-blue-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.focus\:border-blue-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }

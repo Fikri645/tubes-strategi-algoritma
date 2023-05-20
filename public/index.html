@@ -10,25 +10,25 @@
     <script defer src="js/index.js"></script>
   </head>
   <body>
-    <section class="belum-muncul" id="halaman-utama">
-      <div class="overlay-tulisan">
-        <h1>Shortest Path Algorithms</h1>
-        <h2>Kelompok:</h2>
-        <div>
-          <p class="animasi-tulisan belum-muncul hidden-kiri" style="--order: 1">
-            1. Muhammad Fikri Wahidin (1301213505)
-          </p>
-          <p class="animasi-tulisan belum-muncul hidden-kiri" style="--order: 2">
-            2. Mursyid Najib Muhana (1301210411)
-          </p>
-          <p class="animasi-tulisan belum-muncul hidden-kiri" style="--order: 3">
-            3. Rashad Izza Andredi (1301213309)
-          </p>
-        </div>
+    <section class="belum-muncul flex justify-center items-center h-screen bg-cover bg-center relative" style="background-image: url('/assets/images/pembuka.jpg');">
+      <div class="text-center text-white relative z-10">
+        <h1 class="text-4xl font-bold">Shortest Path Algorithms</h1>
+        <h2 class="text-2xl font-semibold">Kelompok:</h2>
+        <p class="animasi-tulisan belum-muncul hidden-kiri relative" style="--order: 1">
+          1. Muhammad Fikri Wahidin (1301213505)
+        </p>
+        <p class="animasi-tulisan belum-muncul hidden-kiri relative" style="--order: 2">
+          2. Mursyid Najib Muhana (1301210411)
+        </p>
+        <p class="animasi-tulisan belum-muncul hidden-kiri relative" style="--order: 3">
+          3. Rashad Izza Andredi (1301213309)
+        </p>
       </div>
+      <div class="absolute top-0 left-0 h-full w-full bg-black opacity-50 z-0"></div>
     </section>
-    <section id="pembuka">
-      <p class="animasi-tulisan belum-muncul">
+    
+    <section class="text-center text-white text-2xl font-light flex justify-center items-center h-screen" id="pembuka">
+      <p class="animasi-tulisan belum-muncul max-w-7xl">
         Carl Johnson (CJ), karakter fiksi yang ditugaskan untuk
         mengantarkan obat-obatan untuk menyelamatkan nyawa orang dalam waktu
         terbatas. CJ harus mencari solusi rute tercepat dan paling efisien.
@@ -39,60 +39,76 @@
         nyawa yang berharga.
       </p>
     </section>
-    <section class="belum-muncul" id="peta">
-      <div id="konten-peta">
-        <div class="left-section">
+    
+    <section class="belum-muncul flex justify-center items-center h-screen" id="peta">
+      <div class="grid grid-cols-2 gap-4">
+        <div>
           <img src="/assets/images/peta.png" alt="peta">
         </div>
-        <div class="right-section">
-          <h1>Peta</h1>
+        <div>
+          <h1 class="text-3xl font-bold">Peta</h1>
           <p>Berikut adalah peta san viero tempat CJ melakukan tugasnya.</p>
         </div>
       </div>
     </section>
-
-    <section class="belum-muncul" id="bellman-ford">
-      <h2>Bellman-Ford</h2>
-      <div>
-        <label for="source-node-bf">Source Node:</label>
+    
+    <section class="belum-muncul text-white flex justify-center items-center h-screen" id="algoritma">
+      <!-- Bellman-Ford -->
+      <div class="">
+        <h2 class="text-2xl font-bold mb-4">Bellman-Ford</h2>
+      <div class="mb-4">
+        <label for="source-node-bf" class="block mb-1">Source Node:</label>
         <input
           type="text"
           id="source-node-bf"
           placeholder="Masukkan titik awal"
+          class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
         />
-        <br />
-        <label for="graph-input-bf">Graph (JSON):</label>
-        <br />
+      </div>
+      <div class="mb-4">
+        <label for="graph-input-bf" class="block mb-1">Graph (JSON):</label>
         <textarea
           id="graph-input-bf"
           placeholder="Masukkan graf dalam format JSON"
+          class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
         ></textarea>
-        <br />
-        <button onclick="runBellmanFord()">Run Bellman-Ford</button>
       </div>
+      <button onclick="runBellmanFord()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Run Bellman-Ford</button>
       <div id="output-bf"></div>
-    </section>
-
-    <section class="belum-muncul" id="dijkstra">
-      <h2>Dijkstra</h2>
-      <div>
-        <label for="source-node-dijkstra">Source Node:</label>
+      </div>
+      <!-- Dijkstra -->
+      <div class="">
+        <h2 class="text-2xl font-bold mb-4">Dijkstra</h2>
+      <div class="mb-4">
+        <label for="source-node-dijkstra" class="block mb-1">Source Node:</label>
         <input
           type="text"
           id="source-node-dijkstra"
           placeholder="Masukkan titik awal"
+          class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
         />
-        <br />
-        <label for="graph-input-dijkstra">Graph (JSON):</label>
-        <br />
+      </div>
+      <div class="mb-4">
+        <label for="graph-input-dijkstra" class="block mb-1">Graph (JSON):</label>
         <textarea
           id="graph-input-dijkstra"
           placeholder="Masukkan graf dalam format JSON"
+          class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
         ></textarea>
-        <br />
-        <button onclick="runDijkstra()">Run Dijkstra</button>
       </div>
+      <button onclick="runDijkstra()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Run Dijkstra</button>
       <div id="output-dijkstra"></div>
+      </div>
     </section>
   </body>
 </html>
+
+<!-- Contoh input JSON:
+{
+  "A": { "B": 4, "C": 2 },
+  "B": { "D": 5 },
+  "C": { "B": 1, "D": 8 },
+  "D": { "E": 3 },
+  "E": {}
+} 
+-->
