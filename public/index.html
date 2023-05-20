@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shortest Path Algorithms</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/algoritma.js"></script>
+    <script defer src="js/index.js"></script>
+  </head>
+  <body>
+    <section class="belum-muncul" id="halaman-utama">
+      <div class="overlay-tulisan">
+        <h1>Shortest Path Algorithms</h1>
+        <h2>Kelompok:</h2>
+        <div>
+          <p class="animasi-tulisan belum-muncul hidden-kiri" style="--order: 1">
+            1. Muhammad Fikri Wahidin (1301213505)
+          </p>
+          <p class="animasi-tulisan belum-muncul hidden-kiri" style="--order: 2">
+            2. Mursyid Najib Muhana (1301210411)
+          </p>
+          <p class="animasi-tulisan belum-muncul hidden-kiri" style="--order: 3">
+            3. Rashad Izza Andredi (1301213309)
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="pembuka">
+      <p class="animasi-tulisan belum-muncul">
+        Carl Johnson (CJ), karakter fiksi yang ditugaskan untuk
+        mengantarkan obat-obatan untuk menyelamatkan nyawa orang dalam waktu
+        terbatas. CJ harus mencari solusi rute tercepat dan paling efisien.
+        Dalam usahanya, CJ menggunakan algoritma Bellman-Ford dan Dijkstra yang
+        terkenal dalam menemukan jalur optimal dalam teori graf. Dengan
+        algoritma-algoritma ini sebagai panduannya, CJ memulai perjalanan
+        berisiko, berpacu melawan waktu untuk menyelamatkan setiap detik dan
+        nyawa yang berharga.
+      </p>
+    </section>
+    <section class="belum-muncul" id="peta">
+      <div id="konten-peta">
+        <div class="left-section">
+          <img src="/assets/images/peta.png" alt="peta">
+        </div>
+        <div class="right-section">
+          <h1>Peta</h1>
+          <p>Berikut adalah peta san viero tempat CJ melakukan tugasnya.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="belum-muncul" id="bellman-ford">
+      <h2>Bellman-Ford</h2>
+      <div>
+        <label for="source-node-bf">Source Node:</label>
+        <input
+          type="text"
+          id="source-node-bf"
+          placeholder="Masukkan titik awal"
+        />
+        <br />
+        <label for="graph-input-bf">Graph (JSON):</label>
+        <br />
+        <textarea
+          id="graph-input-bf"
+          placeholder="Masukkan graf dalam format JSON"
+        ></textarea>
+        <br />
+        <button onclick="runBellmanFord()">Run Bellman-Ford</button>
+      </div>
+      <div id="output-bf"></div>
+    </section>
+
+    <section class="belum-muncul" id="dijkstra">
+      <h2>Dijkstra</h2>
+      <div>
+        <label for="source-node-dijkstra">Source Node:</label>
+        <input
+          type="text"
+          id="source-node-dijkstra"
+          placeholder="Masukkan titik awal"
+        />
+        <br />
+        <label for="graph-input-dijkstra">Graph (JSON):</label>
+        <br />
+        <textarea
+          id="graph-input-dijkstra"
+          placeholder="Masukkan graf dalam format JSON"
+        ></textarea>
+        <br />
+        <button onclick="runDijkstra()">Run Dijkstra</button>
+      </div>
+      <div id="output-dijkstra"></div>
+    </section>
+  </body>
+</html>

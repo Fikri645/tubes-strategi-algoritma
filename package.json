@@ -1,0 +1,17 @@
+{
+  "name": "tubes-strategi-algoritma",
+  "version": "1.0.0",
+  "description": "Kelompok:\r 1. Muhammad Fikri Wahidin (1301213505)\r 2. Mursyid Najib Muhana (1301210411)\r 3. Rashad Izza Andredi (1301213309)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
+  }
+}
