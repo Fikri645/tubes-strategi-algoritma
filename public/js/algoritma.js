@@ -117,53 +117,53 @@ function getPath(predecessor, destination) {
 
 // Fungsi untuk menjalankan algoritma Bellman-Ford
 function runBellmanFord() {
-  const sourceNode = document.getElementById("source-node-bf").value;
-  const graphInput = document.getElementById("graph-input-bf").value;
+  const sourceNode = document.getElementById("source-node").value;
+  const graphInput = document.getElementById("graph-input").value;
 
   const graph = JSON.parse(graphInput);
 
   try {
     const { distance, predecessor } = bellmanFord(graph, sourceNode);
-    const outputElement = document.getElementById("output-bf");
+    const outputElement = document.getElementById("output");
 
     let outputHTML = "<pre>";
     for (let node in distance) {
       const { path, visitedNodes } = getPath(predecessor, node);
-      outputHTML += `Path to node ${node}: ${path.join(" -> ")}<br>`;
-      outputHTML += `Visited nodes: ${visitedNodes.join(", ")}<br>`;
-      outputHTML += `Distance: ${distance[node]}<br><br>`;
+      outputHTML += `Jalur Ke Simpul ${node}: ${path.join(" -> ")}<br>`;
+      outputHTML += `Simpul yang dikunjungi: ${visitedNodes.join(", ")}<br>`;
+      outputHTML += `Jarak: ${distance[node]}<br><br>`;
     }
     outputHTML += "</pre>";
 
     outputElement.innerHTML = outputHTML;
   } catch (error) {
-    document.getElementById("output-bf").innerHTML = "Error: " + error.message;
+    document.getElementById("output").innerHTML = "Error: " + error.message;
   }
 }
 
 // Fungsi untuk menjalankan algoritma Dijkstra
 function runDijkstra() {
-  const sourceNode = document.getElementById("source-node-dijkstra").value;
-  const graphInput = document.getElementById("graph-input-dijkstra").value;
+  const sourceNode = document.getElementById("source-node").value;
+  const graphInput = document.getElementById("graph-input").value;
 
   const graph = JSON.parse(graphInput);
 
   try {
     const { distance, predecessor } = dijkstra(graph, sourceNode);
-    const outputElement = document.getElementById("output-dijkstra");
+    const outputElement = document.getElementById("output");
 
     let outputHTML = "<pre>";
     for (let node in distance) {
       const { path, visitedNodes } = getPath(predecessor, node);
-      outputHTML += `Path to node ${node}: ${path.join(" -> ")}<br>`;
-      outputHTML += `Visited nodes: ${visitedNodes.join(", ")}<br>`;
-      outputHTML += `Distance: ${distance[node]}<br><br>`;
+      outputHTML += `Jalur Ke Simpul ${node}: ${path.join(" -> ")}<br>`;
+      outputHTML += `Simpul yang dikunjungi: ${visitedNodes.join(", ")}<br>`;
+      outputHTML += `Jarak: ${distance[node]}<br><br>`;
     }
     outputHTML += "</pre>";
 
     outputElement.innerHTML = outputHTML;
   } catch (error) {
-    document.getElementById("output-dijkstra").innerHTML =
+    document.getElementById("output").innerHTML =
       "Error: " + error.message;
   }
 }

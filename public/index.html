@@ -73,23 +73,24 @@
       class="belum-muncul text-white flex justify-center items-center h-screen"
       id="algoritma"
     >
-      <!-- Bellman-Ford -->
-      <div class="">
-        <h2 class="text-2xl font-bold mb-4">Bellman-Ford</h2>
+    <div class="grid grid-cols-2 gap-10">
+      <div class="text-right">
+        <h2 class="text-2xl font-bold mb-4">Algoritma</h2>
         <div class="mb-4">
-          <label for="source-node-bf" class="block mb-1">Source Node:</label>
+          <label for="source-node" class="block mb-1">Source Node:</label>
           <input
             type="text"
-            id="source-node-bf"
+            id="source-node"
             placeholder="Masukkan titik awal"
             class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
           />
         </div>
         <div class="mb-4">
-          <label for="graph-input-bf" class="block mb-1">Graph (JSON):</label>
+          <label for="graph-input" class="block mb-1">Graph (JSON):</label>
           <textarea
-            id="graph-input-bf"
+            id="graph-input"
             placeholder="Masukkan graf dalam format JSON"
+            rows="7"
             class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
           ></textarea>
         </div>
@@ -99,40 +100,18 @@
         >
           Run Bellman-Ford
         </button>
-        <div id="output-bf"></div>
-      </div>
-      <!-- Dijkstra -->
-      <div class="">
-        <h2 class="text-2xl font-bold mb-4">Dijkstra</h2>
-        <div class="mb-4">
-          <label for="source-node-dijkstra" class="block mb-1"
-            >Source Node:</label
-          >
-          <input
-            type="text"
-            id="source-node-dijkstra"
-            placeholder="Masukkan titik awal"
-            class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
-          />
-        </div>
-        <div class="mb-4">
-          <label for="graph-input-dijkstra" class="block mb-1"
-            >Graph (JSON):</label
-          >
-          <textarea
-            id="graph-input-dijkstra"
-            placeholder="Masukkan graf dalam format JSON"
-            class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
-          ></textarea>
-        </div>
         <button
           onclick="runDijkstra()"
           class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Run Dijkstra
         </button>
-        <div id="output-dijkstra"></div>
       </div>
+      <div class="text-left">
+        <h2 class="text-2xl font-bold mb-4">Output</h2>
+        <div id="output"></div>
+      </div>
+    </div>
     </section>
   </body>
 </html>
