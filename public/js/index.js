@@ -13,3 +13,4 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.belum-muncul');
 hiddenElements.forEach((element) => observer.observe(element));
+

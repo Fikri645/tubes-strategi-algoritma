@@ -4,7 +4,8 @@
   "description": "Kelompok:\r 1. Muhammad Fikri Wahidin (1301213505)\r 2. Mursyid Najib Muhana (1301210411)\r 3. Rashad Izza Andredi (1301213309)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
+    "minify": "npx tailwindcss -o ./public/css/final.css --minify"
   },
   "keywords": [],
   "author": "",

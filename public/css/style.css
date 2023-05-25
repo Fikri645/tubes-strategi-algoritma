@@ -582,6 +582,10 @@ video {
   max-width: 80rem;
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -675,22 +679,37 @@ video {
   font-weight: 600;
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .opacity-50 {
   opacity: 0.5;
 }
 
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 body {
   font-family: 'Poppins', sans-serif;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .belum-muncul {
@@ -719,12 +738,17 @@ body {
   transition-delay: calc(100ms * var(--order));
 }
 
+.blob-motion{
+  position: absolute;
+  transform: translate(-10%,-35%);
+}
+
 #pembuka{
-  background-color: black;
+  background-color: #001220;
 }
 
 #peta{
-  background-color: whitesmoke;
+  ckground-color: #f9f9f9;
 }
 
 #peta img{
@@ -732,7 +756,7 @@ body {
 }
 
 #algoritma{
-  background-color: black;
+  background-color: #001220;
 }
 
 .hover\:bg-blue-600:hover {
@@ -749,3 +773,4 @@ body {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
+
