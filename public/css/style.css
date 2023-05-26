@@ -652,16 +652,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -770,11 +760,19 @@ section {
 }
 
 #peta{
-  ckground-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 #peta img{
   width: 40rem;
+}
+
+#peta-graf{
+  background-color: #001220;
+}
+
+#peta-misi{
+  background-color: #f9f9f9;
 }
 
 #algoritma{

@@ -49,11 +49,19 @@ section {
 }
 
 #peta{
-ckground-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 #peta img{
   width: 40rem;
+}
+
+#peta-graf{
+  background-color: #001220;
+}
+
+#peta-misi{
+  background-color: #f9f9f9;
 }
 
 #algoritma{
