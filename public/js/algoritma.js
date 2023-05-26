@@ -131,7 +131,7 @@ function runBellmanFord() {
       const { path, visitedNodes } = getPath(predecessor, node);
       outputHTML += `Jalur Ke Simpul ${node}: ${path.join(" -> ")}<br>`;
       outputHTML += `Simpul yang dikunjungi: ${visitedNodes.join(", ")}<br>`;
-      outputHTML += `Jarak: ${distance[node]}<br><br>`;
+      outputHTML += `Total Usaha: ${distance[node]}<br><br>`;
     }
     outputHTML += "</pre>";
 
@@ -157,7 +157,7 @@ function runDijkstra() {
       const { path, visitedNodes } = getPath(predecessor, node);
       outputHTML += `Jalur Ke Simpul ${node}: ${path.join(" -> ")}<br>`;
       outputHTML += `Simpul yang dikunjungi: ${visitedNodes.join(", ")}<br>`;
-      outputHTML += `Jarak: ${distance[node]}<br><br>`;
+      outputHTML += `Total Usaha: ${distance[node]}<br><br>`;
     }
     outputHTML += "</pre>";
 
