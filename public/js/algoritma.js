@@ -103,21 +103,20 @@ function dijkstra(graph, source) {
 // Fungsi untuk mendapatkan jalur dari simpul sumber ke simpul tujuan
 function getPath(predecessor, destination) {
   const path = [];
-  const visitedNodes = [];
   let current = destination;
 
   while (current !== null) {
     path.unshift(current);
-    visitedNodes.unshift(current);
     current = predecessor[current];
   }
 
-  return { path, visitedNodes };
+  return path;
 }
 
 // Fungsi untuk menjalankan algoritma Bellman-Ford
 function runBellmanFord() {
   const sourceNode = document.getElementById("source-node").value;
+  const destination = document.getElementById("destination").value;
   const graphInput = document.getElementById("graph-input").value;
 
   const graph = JSON.parse(graphInput);
@@ -127,12 +126,10 @@ function runBellmanFord() {
     const outputElement = document.getElementById("output");
 
     let outputHTML = "<pre>";
-    for (let node in distance) {
-      const { path, visitedNodes } = getPath(predecessor, node);
-      outputHTML += `Jalur Ke Simpul ${node}: ${path.join(" -> ")}<br>`;
-      outputHTML += `Simpul yang dikunjungi: ${visitedNodes.join(", ")}<br>`;
-      outputHTML += `Total Usaha: ${distance[node]}<br><br>`;
-    }
+    const path = getPath(predecessor, destination);
+    outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
+    outputHTML += `Total Usaha: ${distance[destination]}<br><br>`;
+
     outputHTML += "</pre>";
 
     outputElement.innerHTML = outputHTML;
@@ -144,6 +141,7 @@ function runBellmanFord() {
 // Fungsi untuk menjalankan algoritma Dijkstra
 function runDijkstra() {
   const sourceNode = document.getElementById("source-node").value;
+  const destination = document.getElementById("destination").value;
   const graphInput = document.getElementById("graph-input").value;
 
   const graph = JSON.parse(graphInput);
@@ -153,12 +151,10 @@ function runDijkstra() {
     const outputElement = document.getElementById("output");
 
     let outputHTML = "<pre>";
-    for (let node in distance) {
-      const { path, visitedNodes } = getPath(predecessor, node);
-      outputHTML += `Jalur Ke Simpul ${node}: ${path.join(" -> ")}<br>`;
-      outputHTML += `Simpul yang dikunjungi: ${visitedNodes.join(", ")}<br>`;
-      outputHTML += `Total Usaha: ${distance[node]}<br><br>`;
-    }
+    const path = getPath(predecessor, destination);
+    outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
+    outputHTML += `Total Usaha: ${distance[destination]}<br><br>`;
+
     outputHTML += "</pre>";
 
     outputElement.innerHTML = outputHTML;
