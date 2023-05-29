@@ -121,6 +121,8 @@ function runBellmanFord() {
 
   const graph = JSON.parse(graphInput);
 
+  const startTime = performance.now(); // Waktu mulai
+
   try {
     const { distance, predecessor } = bellmanFord(graph, sourceNode);
     const outputElement = document.getElementById("output");
@@ -136,6 +138,10 @@ function runBellmanFord() {
   } catch (error) {
     document.getElementById("output").innerHTML = "Error: " + error.message;
   }
+
+  const endTime = performance.now(); // Waktu selesai
+  const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
+  console.log("Waktu eksekusi Bellman-Ford: " + executionTime + " ms");
 }
 
 // Fungsi untuk menjalankan algoritma Dijkstra
@@ -145,6 +151,8 @@ function runDijkstra() {
   const graphInput = document.getElementById("graph-input").value;
 
   const graph = JSON.parse(graphInput);
+
+  const startTime = performance.now(); // Waktu mulai
 
   try {
     const { distance, predecessor } = dijkstra(graph, sourceNode);
@@ -162,4 +170,9 @@ function runDijkstra() {
     document.getElementById("output").innerHTML =
       "Error: " + error.message;
   }
+
+  const endTime = performance.now(); // Waktu selesai
+  const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
+  console.log("Waktu eksekusi Dijkstra: " + executionTime + " ms");
 }
+
