@@ -130,7 +130,7 @@ function runBellmanFord() {
     let outputHTML = "<pre>";
     const path = getPath(predecessor, destination);
     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-    outputHTML += `Total Usaha: ${distance[destination]}<br><br>`;
+    outputHTML += `Total Usaha: ${distance[destination]}<br>`;
 
     outputHTML += "</pre>";
 
@@ -138,10 +138,13 @@ function runBellmanFord() {
   } catch (error) {
     document.getElementById("output").innerHTML = "Error: " + error.message;
   }
-
+  const timeRunElement = document.getElementById("run-time");
   const endTime = performance.now(); // Waktu selesai
   const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
-  console.log("Waktu eksekusi Bellman-Ford: " + executionTime + " ms");
+  let timeRunHTML = "<pre>";
+  timeRunHTML += `Waktu Eksekusi Bellman-Ford: ${executionTime} ms<br>`;
+  timeRunHTML += "</pre>";
+  timeRunElement.innerHTML = timeRunHTML;
 }
 
 // Fungsi untuk menjalankan algoritma Dijkstra
@@ -161,18 +164,19 @@ function runDijkstra() {
     let outputHTML = "<pre>";
     const path = getPath(predecessor, destination);
     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-    outputHTML += `Total Usaha: ${distance[destination]}<br><br>`;
+    outputHTML += `Total Usaha: ${distance[destination]}<br>`;
 
     outputHTML += "</pre>";
 
     outputElement.innerHTML = outputHTML;
   } catch (error) {
-    document.getElementById("output").innerHTML =
-      "Error: " + error.message;
+    document.getElementById("output").innerHTML = "Error: " + error.message;
   }
-
+  const timeRunElement = document.getElementById("run-time");
   const endTime = performance.now(); // Waktu selesai
   const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
-  console.log("Waktu eksekusi Dijkstra: " + executionTime + " ms");
+  let timeRunHTML = "<pre>";
+  timeRunHTML += `Waktu Eksekusi Dijkstra: ${executionTime} ms<br>`;
+  timeRunHTML += "</pre>";
+  timeRunElement.innerHTML = timeRunHTML;
 }
-
