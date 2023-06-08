@@ -1,29 +1,3 @@
-class PriorityQueue {
-  constructor() {
-    this.queue = [];
-  }
-
-  enqueue(item, priority) {
-    this.queue.push({ item, priority });
-    this.sort();
-  }
-
-  dequeue() {
-    if (this.isEmpty()) {
-      return null;
-    }
-    return this.queue.shift().item;
-  }
-
-  sort() {
-    this.queue.sort((a, b) => a.priority - b.priority);
-  }
-
-  isEmpty() {
-    return this.queue.length === 0;
-  }
-}
-
 function bellmanFord(graph, source) {
   // Inisialisasi jarak awal
   let distance = {};
@@ -72,32 +46,40 @@ function dijkstra(graph, source) {
   }
   distance[source] = 0;
 
-  // Inisialisasi visited
-  let visited = {};
+  let visited = new Set();
 
-  // Inisialisasi priority queue
-  let queue = new PriorityQueue();
-  queue.enqueue(source, 0);
+  while (visited.size < Object.keys(graph).length) {
+    let currentNode = getMinDistanceNode(distance, visited);
 
-  // Proses pencarian jalur terpendek
-  while (!queue.isEmpty()) {
-    let u = queue.dequeue();
-    if (visited[u]) {
-      continue;
-    }
-    visited[u] = true;
-    for (let v in graph[u]) {
-      let weight = graph[u][v];
-      let newDistance = distance[u] + weight;
-      if (newDistance < distance[v]) {
-        distance[v] = newDistance;
-        predecessor[v] = u;
-        queue.enqueue(v, newDistance);
+    visited.add(currentNode);
+
+    for (let [adjacentNode, weight] of Object.entries(graph[currentNode])) {
+      if (weight >= 0) { 
+        let totalDistance = distance[currentNode] + weight;
+
+        if (totalDistance < distance[adjacentNode]) {
+          distance[adjacentNode] = totalDistance;
+          predecessor[adjacentNode] = currentNode;
+        }
       }
     }
   }
 
   return { distance, predecessor };
+}
+
+function getMinDistanceNode(distance, visited) {
+  let minDistance = Infinity;
+  let minNode = null;
+
+  for (let node in distance) {
+    if (distance[node] < minDistance && !visited.has(node)) {
+      minDistance = distance[node];
+      minNode = node;
+    }
+  }
+
+  return minNode;
 }
 
 // Fungsi untuk mendapatkan jalur dari simpul sumber ke simpul tujuan
