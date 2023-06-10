@@ -122,13 +122,50 @@
       class="belum-muncul flex justify-center items-center h-screen"
       id="peta-misi"
     >
-      <div class="grid grid-cols-2 gap-4">
-        <div>
+    <h1 class="text-3xl font-bold">Misi</h1>
+          <p>Bantu CJ menyelesaikan Misi.</p>
+      <div class="grid grid-cols-2 gap-4 mt-10">
+        <div class="mr-40 peta-misi">
           <img src="/assets/svg/peta-misi.svg" style="width: 70vh" alt="peta" />
         </div>
         <div>
-          <h1 class="text-3xl font-bold">Peta</h1>
-          <p>Berikut adalah misi yang harus dijalankan CJ.</p>
+          <div class="text-left">
+            <h2 class="text-2xl font-bold mb-4 mt-10">Algoritma</h2>
+            <div class="mb-4">
+              <label for="source-node-default" class="block mb-1">Titik Awal:</label>
+              <input
+                type="text"
+                id="source-node-default"
+                placeholder="Masukkan titik awal"
+                class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
+              />
+            </div>
+            <div class="mb-4">
+              <label for="destination-default" class="block mb-1">Titik Tujuan:</label>
+              <input
+                type="text"
+                id="destination-default"
+                placeholder="Masukkan titik tujuan"
+                class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 text-black"
+              />
+            </div>
+            <button
+              onclick="runBellmanFordDefault()"
+              class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              Run Bellman-Ford
+            </button>
+            <button
+              onclick="runDijkstraDefault()"
+              class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              Run Dijkstra
+            </button>
+            <h2 class="text-2xl font-bold mb-4 mt-10">Output</h2>
+          <div id="output-default"></div>
+          <div id="run-time-default"></div>
+          <div id="notif-misi"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -136,7 +173,7 @@
       class="belum-muncul text-white flex justify-center items-center min-h-screen"
       id="algoritma"
     >
-      <div></div>
+    <h1 class="text-3xl font-bold">Program</h1>
       <div class="grid grid-cols-2 gap-10 mt-10">
         <div class="text-right">
           <h2 class="text-2xl font-bold mb-4">Algoritma</h2>
@@ -150,7 +187,7 @@
             />
           </div>
           <div class="mb-4">
-            <label for="source-node" class="block mb-1">Titik Tujuan:</label>
+            <label for="destination" class="block mb-1">Titik Tujuan:</label>
             <input
               type="text"
               id="destination"
@@ -188,9 +225,9 @@
         </div>
       </div>
     </section>
-    <section id="footer">
-      
-    </section>
+    <footer class="flex-rw">
+      <p>Made with <span style="color: #e25555">❤</span> by Kelompok ...</p>
+    </footer>
   </body>
 </html>
 

@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./public/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'peta': "url('/assets/svg/peta-graf.svg')",
+      }
+    },
   },
   plugins: [],
 }

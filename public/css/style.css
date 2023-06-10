@@ -554,6 +554,10 @@ video {
   margin-bottom: 1rem;
 }
 
+.mr-40 {
+  margin-right: 10rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -723,7 +727,7 @@ video {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 section {
@@ -738,7 +742,7 @@ section {
   transition: all 2s;
 }
 
-.hidden-kiri{
+.hidden-kiri {
   transform: translateX(-100%);
 }
 
@@ -754,36 +758,36 @@ section {
   transform: translateX(0);
 }
 
-.animasi-tulisan{
+.animasi-tulisan {
   transition-delay: calc(100ms * var(--order));
 }
 
-.blob-motion{
+.blob-motion {
   position: absolute;
-  transform: translate(-10%,-35%);
+  transform: translate(-10%, -35%);
 }
 
-#pembuka{
+#pembuka {
   background-color: #001220;
 }
 
-#peta{
+#peta {
   background-color: #f9f9f9;
 }
 
-#peta img{
+#peta img {
   width: 40rem;
 }
 
-#peta-graf{
+#peta-graf {
   background-color: #001220;
 }
 
-#peta-misi{
+#peta-misi {
   background-color: #f9f9f9;
 }
 
-#algoritma{
+#algoritma {
   background-color: #001220;
 }
 
