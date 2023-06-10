@@ -487,6 +487,8 @@ function resetSemua() {
   document.getElementById("output-default").innerHTML = "";
   document.getElementById("notif-misi").innerHTML = "";
   document.getElementById("run-time-default").innerHTML = "";
+  document.getElementById("source-node-default").value = "";
+  document.getElementById("destination-default").value = "";
   document
     .getElementById("destination-default")
     .setAttribute("prev-destination", "");
