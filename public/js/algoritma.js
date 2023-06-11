@@ -8,7 +8,6 @@ function bellmanFord(graph, source) {
   }
   distance[source] = 0;
 
-  // Proses relaksasi pada setiap edge
   for (let i = 0; i < Object.keys(graph).length - 1; i++) {
     for (let u in graph) {
       for (let v in graph[u]) {
@@ -464,34 +463,6 @@ function runDijkstraDefault() {
   document
     .getElementById("destination-default")
     .setAttribute("prev-destination", destination);
-}
-
-function hideButton(button) {
-  button.classList.add("hidden");
-}
-
-function resetButton() {
-  var buttond = document.getElementById("buttond");
-  var buttonbf = document.getElementById("buttonbf");
-  buttond.classList.remove("hidden");
-  buttonbf.classList.remove("hidden");
-}
-
-function resetSemua() {
-  var buttond = document.getElementById("buttond");
-  var buttonbf = document.getElementById("buttonbf");
-  var petaMisi = document.querySelector(".peta-misi img");
-  petaMisi.src = "/assets/svg/peta-misi.svg";
-  buttond.classList.remove("hidden");
-  buttonbf.classList.remove("hidden");
-  document.getElementById("output-default").innerHTML = "";
-  document.getElementById("notif-misi").innerHTML = "";
-  document.getElementById("run-time-default").innerHTML = "";
-  document.getElementById("source-node-default").value = "";
-  document.getElementById("destination-default").value = "";
-  document
-    .getElementById("destination-default")
-    .setAttribute("prev-destination", "");
 }
 
 // Fungsi untuk menjalankan algoritma Dijkstra
