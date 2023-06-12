@@ -97,8 +97,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35px; /* Ubah tinggi sesuai kebutuhan Anda */
-  background-color: #f2f2f2; /* Ubah warna latar belakang sesuai kebutuhan Anda */
+  height: 35px; 
+  background-color: #f9f9f9; 
   font-weight: bolder;
   font-style: italic;
 }

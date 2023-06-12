@@ -1,5 +1,4 @@
 function bellmanFord(graph, source) {
-  // Inisialisasi jarak awal
   let distances = {};
   let predecessor = {};
   for (let node in graph) {
@@ -21,7 +20,6 @@ function bellmanFord(graph, source) {
     }
   }
 
-  // Deteksi siklus negatif
   for (let u in graph) {
     for (let v in graph[u]) {
       let weight = graph[u][v];
@@ -36,7 +34,6 @@ function bellmanFord(graph, source) {
 }
 
 function dijkstra(graph, source) {
-  // Inisialisasi jarak awal
   let distances = {};
   let predecessor = {};
   for (let node in graph) {
@@ -81,7 +78,6 @@ function getMinDistanceNode(distances, visited) {
   return minNode;
 }
 
-// Fungsi untuk mendapatkan jalur dari simpul sumber ke simpul tujuan
 function getPath(predecessor, destination) {
   const path = [];
   let current = destination;
@@ -94,7 +90,6 @@ function getPath(predecessor, destination) {
   return path;
 }
 
-// Fungsi untuk menjalankan algoritma Bellman-Ford
 function runBellmanFord() {
   const sourceNode = document.getElementById("source-node").value;
   const destination = document.getElementById("destination").value;
@@ -126,7 +121,7 @@ function runBellmanFord() {
     document.getElementById("run-time-default").innerHTML = "";
     return;
   }
-  const startTime = performance.now(); // Waktu mulai
+  const startTime = performance.now(); 
 
   try {
     const { distances, predecessor } = bellmanFord(graph, sourceNode);
@@ -144,15 +139,14 @@ function runBellmanFord() {
     document.getElementById("output").innerHTML = "Error: " + error.message;
   }
   const timeRunElement = document.getElementById("run-time");
-  const endTime = performance.now(); // Waktu selesai
-  const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
+  const endTime = performance.now(); 
+  const executionTime = endTime - startTime; 
   let timeRunHTML = "<pre>";
   timeRunHTML += `Waktu Eksekusi Bellman-Ford: ${executionTime} ms<br>`;
   timeRunHTML += "</pre>";
   timeRunElement.innerHTML = timeRunHTML;
 }
 
-// Fungsi untuk menjalankan algoritma Dijkstra
 function runDijkstra() {
   const sourceNode = document.getElementById("source-node").value;
   const destination = document.getElementById("destination").value;
@@ -184,7 +178,7 @@ function runDijkstra() {
     document.getElementById("run-time-default").innerHTML = "";
     return;
   }
-  const startTime = performance.now(); // Waktu mulai
+  const startTime = performance.now(); 
 
   try {
     const { distances, predecessor } = dijkstra(graph, sourceNode);
@@ -202,15 +196,14 @@ function runDijkstra() {
     document.getElementById("output").innerHTML = "Error: " + error.message;
   }
   const timeRunElement = document.getElementById("run-time");
-  const endTime = performance.now(); // Waktu selesai
-  const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
+  const endTime = performance.now(); 
+  const executionTime = endTime - startTime; 
   let timeRunHTML = "<pre>";
   timeRunHTML += `Waktu Eksekusi Dijkstra: ${executionTime} ms<br>`;
   timeRunHTML += "</pre>";
   timeRunElement.innerHTML = timeRunHTML;
 }
 
-// Fungsi untuk menjalankan algoritma Bellman-Ford
 function runBellmanFordDefault() {
   const sourceNode = document.getElementById("source-node-default").value;
   const destination = document.getElementById("destination-default").value;
@@ -238,7 +231,7 @@ function runBellmanFordDefault() {
     document.getElementById("run-time-default").innerHTML = "";
     return;
   }
-  const startTime = performance.now(); // Waktu mulai
+  const startTime = performance.now(); 
 
   try {
     const { distances, predecessor } = bellmanFord(graph, sourceNode);
@@ -257,8 +250,8 @@ function runBellmanFordDefault() {
       "Error: " + error.message;
   }
   const timeRunElement = document.getElementById("run-time-default");
-  const endTime = performance.now(); // Waktu selesai
-  const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
+  const endTime = performance.now(); 
+  const executionTime = endTime - startTime; 
   let timeRunHTML = "<pre>";
   timeRunHTML += `Waktu Eksekusi Bellman-Ford: ${executionTime} ms<br>`;
   timeRunHTML += "</pre>";
@@ -272,7 +265,7 @@ function runBellmanFordDefault() {
     notifMisiHTML += `Misi Pertama Berhasil Diselesaikan<br>`;
     document.getElementById("source-node-default").value = "";
     document.getElementById("destination-default").value = "";
-    petaMisi.src = "/assets/svg/peta-misi1-bf.svg"; // Mengganti sumber gambar dengan peta misi pertama
+    petaMisi.src = "/assets/svg/peta-misi1-bf.svg"; 
   } else if (sourceNode == "F" && destination == "M") {
     const prevDestination = document
       .getElementById("destination-default")
@@ -280,7 +273,7 @@ function runBellmanFordDefault() {
     if (prevDestination != "F") {
       resetButton();
       notifMisiHTML += `Misi Gagal Diselesaikan<br>`;
-      petaMisi.src = "/assets/svg/peta-misi.svg"; // Mengganti sumber gambar dengan peta misi default
+      petaMisi.src = "/assets/svg/peta-misi.svg"; 
       document.getElementById("source-node-default").value = "";
       document.getElementById("destination-default").value = "";
       document
@@ -294,7 +287,7 @@ function runBellmanFordDefault() {
     notifMisiHTML += `Misi Kedua Berhasil Diselesaikan<br>`;
     document.getElementById("source-node-default").value = "";
     document.getElementById("destination-default").value = "";
-    petaMisi.src = "/assets/svg/peta-misi2-bf.svg"; // Mengganti sumber gambar dengan peta misi kedua
+    petaMisi.src = "/assets/svg/peta-misi2-bf.svg"; 
   } else if (sourceNode == "M" && destination == "AI") {
     const prevDestination = document
       .getElementById("destination-default")
@@ -302,7 +295,7 @@ function runBellmanFordDefault() {
     if (prevDestination != "M") {
       resetButton();
       notifMisiHTML += `Misi Gagal Diselesaikan<br>`;
-      petaMisi.src = "/assets/svg/peta-misi.svg"; // Mengganti sumber gambar dengan peta misi default
+      petaMisi.src = "/assets/svg/peta-misi.svg"; 
       document.getElementById("source-node-default").value = "";
       document.getElementById("destination-default").value = "";
       document
@@ -317,7 +310,7 @@ function runBellmanFordDefault() {
     notifMisiHTML += `Misi Ketiga Berhasil Diselesaikan<br>Selamat Anda Telah Membantu CJ Menyelesaikan Misi<br>`;
     document.getElementById("source-node-default").value = "";
     document.getElementById("destination-default").value = "";
-    petaMisi.src = "/assets/svg/peta-misi3-bf.svg"; // Mengganti sumber gambar dengan peta misi ketiga
+    petaMisi.src = "/assets/svg/peta-misi3-bf.svg"; 
   } else {
     resetButton();
     notifMisiHTML += `Misi Gagal Diselesaikan<br>`;
@@ -328,7 +321,7 @@ function runBellmanFordDefault() {
     document
       .getElementById("destination-default")
       .setAttribute("prev-destination", "");
-    petaMisi.src = "/assets/svg/peta-misi.svg"; // Mengganti sumber gambar dengan peta misi default
+    petaMisi.src = "/assets/svg/peta-misi.svg"; 
   }
 
   notifMisiHTML += "</pre>";
@@ -365,7 +358,7 @@ function runDijkstraDefault() {
     document.getElementById("run-time-default").innerHTML = "";
     return;
   }
-  const startTime = performance.now(); // Waktu mulai
+  const startTime = performance.now(); 
 
   try {
     const { distances, predecessor } = dijkstra(graph, sourceNode);
@@ -384,8 +377,8 @@ function runDijkstraDefault() {
       "Error: " + error.message;
   }
   const timeRunElement = document.getElementById("run-time-default");
-  const endTime = performance.now(); // Waktu selesai
-  const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
+  const endTime = performance.now(); 
+  const executionTime = endTime - startTime; 
   let timeRunHTML = "<pre>";
   timeRunHTML += `Waktu Eksekusi Dijkstra: ${executionTime} ms<br>`;
   timeRunHTML += "</pre>";
@@ -399,7 +392,7 @@ function runDijkstraDefault() {
     notifMisiHTML += `Misi Pertama Berhasil Diselesaikan<br>`;
     document.getElementById("source-node-default").value = "";
     document.getElementById("destination-default").value = "";
-    petaMisi.src = "/assets/svg/peta-misi1-d.svg"; // Mengganti sumber gambar dengan peta misi pertama
+    petaMisi.src = "/assets/svg/peta-misi1-d.svg"; 
   } else if (sourceNode == "F" && destination == "M") {
     const prevDestination = document
       .getElementById("destination-default")
@@ -407,7 +400,7 @@ function runDijkstraDefault() {
     if (prevDestination != "F") {
       resetButton();
       notifMisiHTML += `Misi Gagal Diselesaikan<br>`;
-      petaMisi.src = "/assets/svg/peta-misi.svg"; // Mengganti sumber gambar dengan peta misi default
+      petaMisi.src = "/assets/svg/peta-misi.svg"; 
       document.getElementById("source-node-default").value = "";
       document.getElementById("destination-default").value = "";
       document
@@ -421,7 +414,7 @@ function runDijkstraDefault() {
     notifMisiHTML += `Misi Kedua Berhasil Diselesaikan<br>`;
     document.getElementById("source-node-default").value = "";
     document.getElementById("destination-default").value = "";
-    petaMisi.src = "/assets/svg/peta-misi2-d.svg"; // Mengganti sumber gambar dengan peta misi kedua
+    petaMisi.src = "/assets/svg/peta-misi2-d.svg"; 
   } else if (sourceNode == "M" && destination == "AI") {
     const prevDestination = document
       .getElementById("destination-default")
@@ -429,7 +422,7 @@ function runDijkstraDefault() {
     if (prevDestination != "M") {
       resetButton();
       notifMisiHTML += `Misi Gagal Diselesaikan<br>`;
-      petaMisi.src = "/assets/svg/peta-misi.svg"; // Mengganti sumber gambar dengan peta misi default
+      petaMisi.src = "/assets/svg/peta-misi.svg"; 
       document.getElementById("source-node-default").value = "";
       document.getElementById("destination-default").value = "";
       document
@@ -444,7 +437,7 @@ function runDijkstraDefault() {
     document.getElementById("source-node-default").value = "";
     document.getElementById("destination-default").value = "";
     resetButton();
-    petaMisi.src = "/assets/svg/peta-misi3-d.svg"; // Mengganti sumber gambar dengan peta misi ketiga
+    petaMisi.src = "/assets/svg/peta-misi3-d.svg"; 
   } else {
     resetButton();
     notifMisiHTML += `Misi Gagal Diselesaikan<br>`;
@@ -455,7 +448,7 @@ function runDijkstraDefault() {
     document
       .getElementById("destination-default")
       .setAttribute("prev-destination", "");
-    petaMisi.src = "/assets/svg/peta-misi.svg"; // Mengganti sumber gambar dengan peta misi default
+    petaMisi.src = "/assets/svg/peta-misi.svg"; 
   }
 
   notifMisiHTML += "</pre>";
@@ -464,49 +457,3 @@ function runDijkstraDefault() {
     .getElementById("destination-default")
     .setAttribute("prev-destination", destination);
 }
-
-// Fungsi untuk menjalankan algoritma Dijkstra
-// function runDijkstraDefault() {
-//   const sourceNode = document.getElementById("source-node-default").value;
-//   const destination = document.getElementById("destination-default").value;
-//   if (sourceNode == "" || destination == "") {
-//     document.getElementById("output-default").innerHTML = "Error: Source Node atau Destination Node tidak boleh kosong";
-//     return;
-//   }
-//   const graph = JSON.parse(graphInput);
-//   if (!graph.hasOwnProperty(sourceNode)) {
-//     document.getElementById("output-default").innerHTML = "Error: Source Node tidak ada di graph";
-//     return;
-//   }
-//   if (!graph.hasOwnProperty(destination)) {
-//     document.getElementById("output-default").innerHTML = "Error: Destination Node tidak ada di graph";
-//     return;
-//   }
-//   const startTime = performance.now(); // Waktu mulai
-
-//   try {
-//     const { distances, predecessor } = dijkstra(graph, sourceNode);
-//     const outputElement = document.getElementById("output-default");
-
-//     let outputHTML = "<pre>";
-//     const path = getPath(predecessor, destination);
-//     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-//     outputHTML += `Total Usaha: ${distances[destination]}<br>`;
-
-//     outputHTML += "</pre>";
-
-//     outputElement.innerHTML = outputHTML;
-//   } catch (error) {
-//     document.getElementById("output-default").innerHTML = "Error: " + error.message;
-//   }
-//   const timeRunElement = document.getElementById("run-time-default");
-//   const endTime = performance.now(); // Waktu selesai
-//   const executionTime = endTime - startTime; // Waktu eksekusi dalam milidetik
-//   let timeRunHTML = "<pre>";
-//   timeRunHTML += `Waktu Eksekusi Dijkstra: ${executionTime} ms<br>`;
-//   timeRunHTML += "</pre>";
-//   timeRunElement.innerHTML = timeRunHTML;
-
-//     notifMisiHTML += "</pre>";
-//     notifMisiElement.innerHTML = notifMisiHTML;
-// }
