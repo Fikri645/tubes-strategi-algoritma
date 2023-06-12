@@ -1,20 +1,20 @@
 function bellmanFord(graph, source) {
   // Inisialisasi jarak awal
-  let distance = {};
+  let distances = {};
   let predecessor = {};
   for (let node in graph) {
-    distance[node] = Infinity;
+    distances[node] = Infinity;
     predecessor[node] = null;
   }
-  distance[source] = 0;
+  distances[source] = 0;
 
   for (let i = 0; i < Object.keys(graph).length - 1; i++) {
     for (let u in graph) {
       for (let v in graph[u]) {
         let weight = graph[u][v];
-        let newDistance = distance[u] + weight;
-        if (newDistance < distance[v]) {
-          distance[v] = newDistance;
+        let newDistances = distances[u] + weight;
+        if (newDistances < distances[v]) {
+          distances[v] = newDistances;
           predecessor[v] = u;
         }
       }
@@ -25,55 +25,55 @@ function bellmanFord(graph, source) {
   for (let u in graph) {
     for (let v in graph[u]) {
       let weight = graph[u][v];
-      let newDistance = distance[u] + weight;
-      if (newDistance < distance[v]) {
+      let newDistances = distances[u] + weight;
+      if (newDistances < distances[v]) {
         throw new Error("Terdapat siklus negatif pada graf");
       }
     }
   }
 
-  return { distance, predecessor };
+  return { distances, predecessor };
 }
 
 function dijkstra(graph, source) {
   // Inisialisasi jarak awal
-  let distance = {};
+  let distances = {};
   let predecessor = {};
   for (let node in graph) {
-    distance[node] = Infinity;
+    distances[node] = Infinity;
     predecessor[node] = null;
   }
-  distance[source] = 0;
+  distances[source] = 0;
 
   let visited = new Set();
 
   while (visited.size < Object.keys(graph).length) {
-    let currentNode = getMinDistanceNode(distance, visited);
+    let currentNode = getMinDistanceNode(distances, visited);
 
     visited.add(currentNode);
 
     for (let [adjacentNode, weight] of Object.entries(graph[currentNode])) {
       if (weight >= 0) {
-        let totalDistance = distance[currentNode] + weight;
+        let totalDistances = distances[currentNode] + weight;
 
-        if (totalDistance < distance[adjacentNode]) {
-          distance[adjacentNode] = totalDistance;
+        if (totalDistances < distances[adjacentNode]) {
+          distances[adjacentNode] = totalDistances;
           predecessor[adjacentNode] = currentNode;
         }
       }
     }
   }
 
-  return { distance, predecessor };
+  return { distances, predecessor };
 }
 
-function getMinDistanceNode(distance, visited) {
+function getMinDistanceNode(distances, visited) {
   let minDistance = Infinity;
   let minNode = null;
 
-  for (let node in distance) {
-    if (distance[node] < minDistance && !visited.has(node)) {
-      minDistance = distance[node];
+  for (let node in distances) {
+    if (distances[node] < minDistance && !visited.has(node)) {
+      minDistance = distances[node];
       minNode = node;
     }
   }
@@ -129,13 +129,13 @@ function runBellmanFord() {
   const startTime = performance.now(); // Waktu mulai
 
   try {
-    const { distance, predecessor } = bellmanFord(graph, sourceNode);
+    const { distances, predecessor } = bellmanFord(graph, sourceNode);
     const outputElement = document.getElementById("output");
 
     let outputHTML = "<pre>";
     const path = getPath(predecessor, destination);
     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-    outputHTML += `Total Usaha: ${distance[destination]}<br>`;
+    outputHTML += `Total Usaha: ${distances[destination]}<br>`;
 
     outputHTML += "</pre>";
 
@@ -187,13 +187,13 @@ function runDijkstra() {
   const startTime = performance.now(); // Waktu mulai
 
   try {
-    const { distance, predecessor } = dijkstra(graph, sourceNode);
+    const { distances, predecessor } = dijkstra(graph, sourceNode);
     const outputElement = document.getElementById("output");
 
     let outputHTML = "<pre>";
     const path = getPath(predecessor, destination);
     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-    outputHTML += `Total Usaha: ${distance[destination]}<br>`;
+    outputHTML += `Total Usaha: ${distances[destination]}<br>`;
 
     outputHTML += "</pre>";
 
@@ -241,13 +241,13 @@ function runBellmanFordDefault() {
   const startTime = performance.now(); // Waktu mulai
 
   try {
-    const { distance, predecessor } = bellmanFord(graph, sourceNode);
+    const { distances, predecessor } = bellmanFord(graph, sourceNode);
     const outputElement = document.getElementById("output-default");
 
     let outputHTML = "<pre>";
     const path = getPath(predecessor, destination);
     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-    outputHTML += `Total Usaha: ${distance[destination]}<br>`;
+    outputHTML += `Total Usaha: ${distances[destination]}<br>`;
 
     outputHTML += "</pre>";
 
@@ -368,13 +368,13 @@ function runDijkstraDefault() {
   const startTime = performance.now(); // Waktu mulai
 
   try {
-    const { distance, predecessor } = dijkstra(graph, sourceNode);
+    const { distances, predecessor } = dijkstra(graph, sourceNode);
     const outputElement = document.getElementById("output-default");
 
     let outputHTML = "<pre>";
     const path = getPath(predecessor, destination);
     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-    outputHTML += `Total Usaha: ${distance[destination]}<br>`;
+    outputHTML += `Total Usaha: ${distances[destination]}<br>`;
 
     outputHTML += "</pre>";
 
@@ -485,13 +485,13 @@ function runDijkstraDefault() {
 //   const startTime = performance.now(); // Waktu mulai
 
 //   try {
-//     const { distance, predecessor } = dijkstra(graph, sourceNode);
+//     const { distances, predecessor } = dijkstra(graph, sourceNode);
 //     const outputElement = document.getElementById("output-default");
 
 //     let outputHTML = "<pre>";
 //     const path = getPath(predecessor, destination);
 //     outputHTML += `Jalur Ke Tujuan: ${path.join(" -> ")}<br>`;
-//     outputHTML += `Total Usaha: ${distance[destination]}<br>`;
+//     outputHTML += `Total Usaha: ${distances[destination]}<br>`;
 
 //     outputHTML += "</pre>";
 
