@@ -22,7 +22,7 @@ Pertama-tama anda harus mengunduh atau melakukan clone terhadap file repository 
 
 # Contoh input graf dengan format JSON:
 
-Graf 1:
+Contoh graf 1:
 { 
 "A": {"B": 4, "C": 2}, 
 "B": {"C": 3, "D": 2, "E": 3}, 
@@ -31,6 +31,7 @@ Graf 1:
 "E": {"D": 1} 
 }
 
+Contoh graf 2:
 { 
 "A": {"B": 3}, 
 "B": {"A": 3, "C": 4, "D": 5, "E": 3}, 
